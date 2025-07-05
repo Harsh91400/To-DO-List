@@ -49,6 +49,8 @@ function formatDateToDDMMYYYY(dateString) {
 }
 
 function renderTodos() {
+  // Sort todos by date (ascending)
+  todos.sort((a, b) => new Date(a.date) - new Date(b.date));
   const container = document.getElementById('todo-container');
   container.innerHTML = '';
   todos.forEach((todo, index) => {
