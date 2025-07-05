@@ -40,6 +40,14 @@ function loadUserTodos() {
   renderTodos();
 }
 
+function formatDateToDDMMYYYY(dateString) {
+  const dateObj = new Date(dateString);
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth() + 1;
+  const year = dateObj.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 function renderTodos() {
   const container = document.getElementById('todo-container');
   container.innerHTML = '';
@@ -87,9 +95,25 @@ function renderTodos() {
     waiting.className = 'waiting-msg';
     if (!todo.tick1 && !todo.tick2) waiting.textContent = 'Waiting...';
 
-    const date = document.createElement('span');
-    date.className = 'date-text';
-    date.textContent = todo.date;
+    const dateText = document.createElement('span');
+    dateText.className = 'date-text';
+    dateText.textContent = formatDateToDDMMYYYY(todo.date);
+
+    const changeBtn = document.createElement('button');
+    changeBtn.textContent = 'Change Date';
+    changeBtn.className = 'change-date-btn';
+    changeBtn.onclick = () => {
+      const dateInput = document.createElement('input');
+      dateInput.type = 'date';
+      dateInput.value = todo.date;
+      dateInput.onchange = () => {
+        todos[index].date = dateInput.value;
+        saveTodos();
+        renderTodos();
+      };
+      row.replaceChild(dateInput, dateText);
+      row.removeChild(changeBtn);
+    };
 
     const removeBtn = document.createElement('button');
     removeBtn.className = 'remove-btn';
@@ -106,7 +130,8 @@ function renderTodos() {
     row.appendChild(label2);
     row.appendChild(tick2);
     row.appendChild(waiting);
-    row.appendChild(date);
+    row.appendChild(dateText);
+    row.appendChild(changeBtn);
     row.appendChild(removeBtn);
 
     container.appendChild(row);
@@ -118,7 +143,7 @@ function addRow() {
     text: '',
     tick1: false,
     tick2: false,
-    date: new Date().toLocaleDateString()
+    date: new Date().toISOString().slice(0, 10)
   };
   todos.push(newTodo);
   saveTodos();
