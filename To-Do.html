@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Todo App</title>
+  <link rel="stylesheet" href="To-Do.css">
+</head>
+<body>
+  <div class="switch-buttons">
+    <button onclick="showLoginForm()">Login</button>
+    <button onclick="showRegisterForm()">Register</button>
+  </div>
+
+  <div id="login-box" class="username-box">
+    <input type="text" id="username" placeholder="Enter your username">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button class="login-btn" onclick="loadUserTodos()">Login</button>
+  </div>
+
+  <div id="register-box" class="username-box">
+    <input type="text" id="reg-username" placeholder="Create username">
+    <input type="password" id="reg-password" placeholder="Create password">
+    <button class="login-btn" onclick="registerUser()">Register</button>
+  </div>
+
+  <div class="todo-box" id="todoApp">
+    <h2 id="user-title">My Todo List</h2>
+    <div id="todo-container"></div>
+    <button class="add-btn" onclick="addRow()">+ Add New Task</button>
+  </div>
+
+  <footer>&copy; showAUAP()</footer>
+
+  <script src="To-Do.js"></script>
+</body>
+</html>

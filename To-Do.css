@@ -1,0 +1,145 @@
+/* styles.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #c8e6c9);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+h2 {
+  text-align: center;
+  color: #37474f;
+  margin-bottom: 20px;
+}
+
+.todo-row {
+  background: #e8f5e9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-row input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #cfd8dc;
+}
+
+.tick-label {
+  font-weight: 500;
+  color: #455a64;
+}
+
+.tick {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.tick-red {
+  accent-color: red;
+}
+
+.waiting-msg {
+  color: #fb8c00;
+  font-weight: 500;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.date-text {
+  font-size: 14px;
+  color: #607d8b;
+  margin-left: auto;
+}
+
+.remove-btn {
+  background: #ef5350;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #c62828;
+}
+
+.username-box {
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f1f8e9;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  text-align: center;
+}
+
+.username-box input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  width: 90%;
+}
+
+.add-btn, .login-btn {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background-color: #00796b;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover, .login-btn:hover {
+  background-color: #004d40;
+}
+
+.switch-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.switch-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+}
