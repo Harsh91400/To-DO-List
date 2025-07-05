@@ -136,6 +136,21 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
 }
+.change-date-btn {
+  background-color: #00796b; /* Same as login button */
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Same as remove button */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px; /* Matches remove button text size */
+  transition: background 0.3s;
+}
+
+.change-date-btn:hover {
+  background-color: #004d40; /* Hover effect same as login */
+}
+
 
 footer {
   text-align: center;
